@@ -13,7 +13,7 @@ import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity {
+public class Customer_MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private Button btnmyplaces;
     private Button Btnmyappointment;
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         btnmyplaces.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,MyPlaces.class);
+                Intent intent = new Intent(Customer_MainActivity.this, Customer_MyPlaces.class);
                 startActivity(intent);
             }
         });
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         Btnmyappointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,MyAppointments.class);
+                Intent intent = new Intent(Customer_MainActivity.this, Customer_MyAppointments.class);
                 startActivity(intent);
             }
         });
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         btnnewappointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,NewAppointment.class);
+                Intent intent = new Intent(Customer_MainActivity.this, Customer_NewAppointment.class);
                 startActivity(intent);
             }
         });
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         btnplacesnearme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,PlacesNearMe.class);
+                Intent intent = new Intent(Customer_MainActivity.this, Customer_PlacesNearMe.class);
                 startActivity(intent);
             }
         });
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
-        getMenuInflater().inflate(R.menu.menuler,menu);
+        getMenuInflater().inflate(R.menu.menu,menu);
 
         return true;
     }
@@ -81,12 +81,12 @@ public class MainActivity extends AppCompatActivity {
 
         }
         if (item.getItemId()==R.id.Settings){
-            Intent intent =new Intent(MainActivity.this,Settings.class);
+            Intent intent =new Intent(Customer_MainActivity.this, Settings_customer.class);
             startActivity(intent);
         }
         if (item.getItemId()==R.id.LogOut) {
             auth.signOut();
-            Intent intent = new Intent(MainActivity.this, SignIn.class);
+            Intent intent = new Intent(Customer_MainActivity.this, SignIn.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();

@@ -16,14 +16,19 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Introduction extends AppCompatActivity {
     private Button btnSignUp;
     private Button btnAlreadyHaveAnAccount;
 
+    FirebaseDatabase rootNode;
+    DatabaseReference reference;
+
     private FirebaseAuth auth;
-    private EditText email;
-    private EditText password;
+
+    private EditText password, phone, firstname, lastname,email;
     ProgressDialog logup;
 
 
@@ -31,6 +36,10 @@ public class Introduction extends AppCompatActivity {
 
         email = findViewById(R.id.EmailCreate);
         password = findViewById(R.id.Password);
+        phone = findViewById(R.id.Telephone);
+        firstname = findViewById(R.id.FirstName);
+        lastname = findViewById(R.id.LastName);
+
 
         auth = FirebaseAuth.getInstance();
         btnSignUp = (Button) findViewById(R.id.SignUp);
@@ -49,13 +58,13 @@ public class Introduction extends AppCompatActivity {
 
 
                 if (TextUtils.isEmpty(txtEmail)) {
-                    Toast.makeText(this, "E-MAİL FIELD CANNOT BE EMPTY!!!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "E-MAIL FIELD CANNOT BE EMPTY!!!", Toast.LENGTH_LONG).show();
                 } else if (TextUtils.isEmpty(txtPassword)) {
                     Toast.makeText(this, "PASSWORD FIELD CANNOT BE EMPTY!!!", Toast.LENGTH_LONG).show();
                 } else {
                     //progress
-                    logup.setTitle("Kayıt Yapılıyor...");
-                    logup.setMessage("Lütfen Bekleyin...");
+                    logup.setTitle("Signin Up...");
+                    logup.setMessage("Please Wait...");
                     logup.setCanceledOnTouchOutside(true);
                     logup.show();
 
@@ -73,7 +82,7 @@ public class Introduction extends AppCompatActivity {
                              finish();
                          }else {
                              String message = task.getException().toString();
-                             Toast.makeText(Introduction.this, "REGISTRATION WRONG!!!\n" + "Erros: " + message, Toast.LENGTH_LONG).show();
+                             Toast.makeText(Introduction.this, "REGISTRATION WRONG!!!\n" + "Errors: " + message, Toast.LENGTH_LONG).show();
                              logup.dismiss();
                          }
                         }
@@ -100,5 +109,6 @@ public class Introduction extends AppCompatActivity {
         setContentView(R.layout.activity_introduction);
         init();
         init2();
-    }
-}
+    }}
+
+

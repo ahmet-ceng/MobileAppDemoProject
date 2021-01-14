@@ -9,38 +9,61 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".deneme2" android:parentActivityName=".OwnerAppointment"></activity>
         <activity
-            android:name=".Editprofile"
-            android:parentActivityName=".Settings"> </activity>
+            android:name=".deneme1"
+            android:parentActivityName=".OwnerAppointment" />
         <activity
-            android:name=".Changelocation"
-            android:parentActivityName=".Settings" />
+            android:name=".customerNewAppointment"
+            android:parentActivityName=".Customer_NewAppointment" />
         <activity
-            android:name=".Settings"
-            android:parentActivityName=".MainActivity"> </activity>
+            android:name=".Settings_owner"
+            android:parentActivityName=".Owner_menu" />
         <activity
-            android:name=".HairdresserDetails"
-            android:parentActivityName=".PlacesNearMe"> </activity>
+            android:name=".EditProfileOwner"
+            android:parentActivityName=".Mysaloon" />
         <activity
-            android:name=".BarberDetails"
-            android:parentActivityName=".PlacesNearMe" />
+            android:name=".ownerPrices"
+            android:parentActivityName=".Customer_MainActivity" />
         <activity
-            android:name=".PlacesNearMe"
-            android:parentActivityName=".MainActivity" />
+            android:name=".OwnerAppointment"
+            android:parentActivityName=".Customer_MainActivity" />
         <activity
-            android:name=".NewAppointment"
-            android:parentActivityName=".MainActivity" />
+            android:name=".Mysaloon"
+            android:parentActivityName=".Customer_MainActivity" />
+        <activity android:name=".Owner_menu" />
         <activity
-            android:name=".MyAppointments"
-            android:parentActivityName=".MainActivity" />
+            android:name=".Customer_Editprofile"
+            android:parentActivityName=".Settings_customer" />
         <activity
-            android:name=".MyPlaces"
-            android:parentActivityName=".MainActivity" />
+            android:name=".Customer_Changelocation"
+            android:parentActivityName=".Settings_customer" />
+        <activity
+            android:name=".Settings_customer"
+            android:parentActivityName=".Customer_MainActivity" />
+        <activity
+            android:name=".Customer_HairdresserDetails"
+            android:parentActivityName=".Customer_PlacesNearMe" />
+        <activity
+            android:name=".Customer_BarberDetails"
+            android:parentActivityName=".Customer_PlacesNearMe" />
+        <activity
+            android:name=".Customer_PlacesNearMe"
+            android:parentActivityName=".Customer_MainActivity" />
+        <activity
+            android:name=".Customer_NewAppointment"
+            android:parentActivityName=".Customer_MainActivity" />
+        <activity
+            android:name=".Customer_MyAppointments"
+            android:parentActivityName=".Customer_MainActivity" />
+        <activity
+            android:name=".Customer_MyPlaces"
+            android:parentActivityName=".Customer_MainActivity" />
         <activity android:name=".owner_saloon" />
         <activity
             android:name=".SignIn"
             android:parentActivityName=".Introduction" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Customer_MainActivity" />
         <activity android:name=".Introduction">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

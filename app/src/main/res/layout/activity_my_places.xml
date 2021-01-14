@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyPlaces">
+    tools:context=".Customer_MyPlaces">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -31,6 +31,7 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="100dp"
                 android:layout_marginRight="50dp"
+                android:backgroundTint="@color/green"
                 android:text="saloon1" />
 
             <Button
@@ -41,6 +42,7 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="50dp"
+                android:backgroundTint="@color/green"
                 android:text="saloon2" />
 
             <Button
@@ -51,6 +53,7 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="50dp"
+                android:backgroundTint="@color/blue"
                 android:text="new" />
 
             <Button
@@ -61,6 +64,7 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="50dp"
+                android:backgroundTint="@color/blue"
                 android:text="new" />
 
             <Button
@@ -71,6 +75,7 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="50dp"
+                android:backgroundTint="@color/blue"
                 android:text="new" />
         </RelativeLayout>
     </ScrollView>

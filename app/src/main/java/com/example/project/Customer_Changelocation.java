@@ -19,7 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
 
-public class Changelocation extends AppCompatActivity {
+public class Customer_Changelocation extends AppCompatActivity {
     private Toolbar actionbar_Choose;
 
     private Button btnregister;

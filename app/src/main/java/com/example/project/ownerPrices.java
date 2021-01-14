@@ -5,19 +5,23 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 
-public class BarberDetails extends AppCompatActivity {
-    private Toolbar toolbar;
+public class ownerPrices extends AppCompatActivity {
+    private Toolbar actionBarLogin;
+
 
     public void init(){
-        toolbar = findViewById(R.id.action_barBarberDetails);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Barber Details");
+        actionBarLogin = (Toolbar) findViewById(R.id.actionBarLogin);
+        setSupportActionBar(actionBarLogin);
+        getSupportActionBar().setTitle("My Prices");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_barber_details);
+        setContentView(R.layout.activity_owner_prices);
+
         init();
+
     }
 }

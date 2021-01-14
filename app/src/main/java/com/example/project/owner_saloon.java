@@ -16,18 +16,18 @@ public class owner_saloon extends AppCompatActivity {
         btncustomer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(owner_saloon.this,MainActivity.class);
+                Intent intent = new Intent(owner_saloon.this, Customer_MainActivity.class);
                 startActivity(intent);
             }
         });
-        /*btn_owner = findViewById(R.id.ownerButton);
+        btn_owner = findViewById(R.id.ownerButton);
         btn_owner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(owner_saloon.this, menu.class);
+                Intent intent = new Intent(owner_saloon.this, Owner_menu.class);
                 startActivity(intent);
             }
-        });*/
+        });
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {

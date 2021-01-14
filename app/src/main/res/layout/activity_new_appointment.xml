@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewAppointment">
+    tools:context=".Customer_NewAppointment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -27,7 +27,8 @@
                 android:layout_marginTop="100dp"
                 android:layout_marginRight="50dp"
                 android:background="@color/pink"
-                android:text="saloon1" />
+                android:text="Saloon X"
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/saloon2"
@@ -38,7 +39,8 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="50dp"
                 android:background="@color/pink"
-                android:text="sallon2" />
+                android:text="Saloon Y"
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/saloon3"
@@ -49,7 +51,8 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="50dp"
                 android:background="@color/pink"
-                android:text="saloon3" />
+                android:text="Saloon Z"
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/placesnearme"

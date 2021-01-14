@@ -58,20 +58,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/PasswordSıgnIn"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="50dp"
+                android:layout_marginRight="30dp"
                 android:background="@color/pink"
                 android:text="@string/SıgnIn"
-                android:textColor="#FAFAFA"
-                android:textAllCaps="false"/>
+                android:textAllCaps="false"
+                android:textColor="#FAFAFA" />
 
             <Button
-                android:id="@+id/bypass"
-                android:layout_width="wrap_content"
+                android:id="@+id/btnForgetPassword"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/SignInBtn"
-                android:text="bypass" />
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="30dp"
+                android:backgroundTint="@color/orange"
+                android:text="@string/forgetPassword"
+                android:textAllCaps="false" />
+
         </RelativeLayout>
 
     </ScrollView>

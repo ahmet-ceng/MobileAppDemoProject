@@ -8,32 +8,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Settings extends AppCompatActivity {
+public class Settings_owner extends AppCompatActivity {
     private Toolbar toolbar;
-    private Button btnchangelocation;
     private Button btneditprofile;
 
 
     public void init(){
-        toolbar = findViewById(R.id.action_barSettings);
+        toolbar = findViewById(R.id.action_barSettings_owner);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Settings");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        btnchangelocation = findViewById(R.id.changelocation);
-        btnchangelocation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent =new Intent(Settings.this,Changelocation.class);
-                startActivity(intent);
-            }
-        });
 
         btneditprofile = findViewById(R.id.editprofile);
         btneditprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(Settings.this,Editprofile.class);
+                Intent intent =new Intent(Settings_owner.this, Customer_Editprofile.class);
                 startActivity(intent);
             }
         });
@@ -41,7 +31,7 @@ public class Settings extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_settings_owner);
         init();
     }
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Customer_MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -30,6 +30,7 @@
                 android:layout_marginTop="100dp"
                 android:text="@string/welcome"
                 android:textAlignment="center"
+                android:textColor="#000000"
                 android:textSize="24sp" />
 
             <Button
@@ -40,6 +41,7 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="100dp"
                 android:layout_marginRight="50dp"
+                android:backgroundTint="@color/blue"
                 android:text="@string/myplaces" />
 
             <Button
@@ -50,6 +52,7 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="50dp"
+                android:backgroundTint="@color/blue"
                 android:text="@string/myappointment" />
 
             <Button
@@ -60,6 +63,7 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="50dp"
+                android:backgroundTint="@color/blue"
                 android:text="@string/newappointment" />
 
             <Button
@@ -70,6 +74,7 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="50dp"
+                android:backgroundTint="@color/blue"
                 android:text="@string/placesnearme" />
         </RelativeLayout>
     </ScrollView>

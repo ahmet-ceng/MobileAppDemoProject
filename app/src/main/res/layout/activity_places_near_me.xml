@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PlacesNearMe">
+    tools:context=".Customer_PlacesNearMe">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,7 +14,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
-        <include
+            <TextView
+                android:id="@+id/placesnearmemessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/action_barplacesnearme"
+                android:layout_marginTop="150dp"
+                android:text="@string/placesnearmemessage"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <include
             android:id="@+id/action_barplacesnearme"
             layout="@layout/actionbar"> </include>
 
@@ -22,18 +33,29 @@
                 android:id="@+id/barber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/action_barplacesnearme"
+                android:layout_below="@id/placesnearmemessage"
                 android:layout_marginLeft="50dp"
-                android:layout_marginTop="200dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginRight="50dp"
                 android:background="@color/blue"
                 android:text="@string/barber" />
+
+            <TextView
+                android:id="@+id/placesnearmemessage1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/barber"
+                android:layout_marginTop="50dp"
+                android:text="@string/placesnearmemessage2"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/hairdressers"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/barber"
+                android:layout_below="@id/placesnearmemessage1"
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="50dp"

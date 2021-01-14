@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Mysaloon">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <include
+                android:id="@+id/actionBarLogin"
+                layout="@layout/actionbar"></include>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/actionBarLogin"
+                android:layout_marginTop="50dp"
+                app:srcCompat="@android:drawable/btn_star_big_on" />
+
+            <TextView
+                android:id="@+id/nametxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageView"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="60dp"
+                android:width="110dp"
+                android:text="@string/nametxt"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/namedb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignWithParentIfMissing="false"
+                android:layout_alignTop="@id/nametxt"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@id/nametxt"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/telephonetxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nametxt"
+                android:layout_marginTop="30dp"
+                android:width="110dp"
+                android:layout_marginLeft="15dp"
+                android:text="@string/telehonetxt"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/telephonedb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignWithParentIfMissing="false"
+                android:layout_alignTop="@id/telephonetxt"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@id/telephonetxt"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/addresstxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/telephonetxt"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="15dp"
+                android:width="110dp"
+                android:text="@string/addresstxt"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/addressdb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignWithParentIfMissing="false"
+                android:layout_alignTop="@id/addresstxt"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@id/addresstxt"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/ratingtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/addresstxt"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="80dp"
+                android:width="110dp"
+                android:text="@string/ratingtxt"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/ratingdb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignWithParentIfMissing="false"
+                android:layout_alignTop="@id/ratingtxt"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@id/ratingtxt"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/commentstxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ratingtxt"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="15dp"
+                android:width="110dp"
+                android:text="@string/commentstxt"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/commentsdb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignWithParentIfMissing="false"
+                android:layout_marginLeft="50dp"
+                android:layout_alignTop="@id/commentstxt"
+                android:layout_toRightOf="@id/commentstxt"
+                android:text="TextView" />
+
+            <Button
+                android:id="@+id/btnOwnerEditProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/commentstxt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="200dp"
+                android:text="@string/editprofile" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

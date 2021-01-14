@@ -20,11 +20,11 @@
 
     <string name="myplaces">My Places</string>
     <string name="myappointment">My Appointments</string>
-    <string name="newappointment">New Appointments</string>
+    <string name="newappointment">New Appointment</string>
     <string name="placesnearme">Places Near Me</string>
 
-    <string name="confirmed">Confirmed</string>
-    <string name="Pending">Pending</string>
+    <string name="confirmed">Confirmed - 10.10.2021</string>
+    <string name="Pending">Pending - 09.09.2020</string>
     <string name="Change">Change</string>
     <string name="Cancel">Cancel</string>
 
@@ -38,6 +38,46 @@
     <string name="City">City </string>
     <string name="District">District </string>
     <string name="Update">Update</string>
+
+    <string name="Mysaloon">My Saloon</string>
+    <string name="Myprices">My Prices</string>
+
+    <string name="nametxt">Name:</string>
+    <string name="telehonetxt">Telephone:</string>
+    <string name="addresstxt">Address:</string>
+    <string name="ratingtxt">Rating:</string>
+    <string name="commentstxt">Comments:</string>
+
+    //owner prices
+    <string name="Haircut">Haircut:</string>
+    <string name="Beard_Shave">Beard Shave:</string>
+    <string name="Wax">Wax:</string>
+    <string name="Hair_washing">Hair Washing:</string>
+    <string name="price_hair">40 tl</string>
+    <string name="update_button">Update</string>
+
+    //owner appointments
+    <string name="btntoday">Today</string>
+    <string name="btntomorrow">tomorrow</string>
+    <string name="a7">07:00</string>
+    <string name="a8">08:00</string>
+    <string name="a9">09:00</string>
+    <string name="a10">10:00</string>
+    <string name="a11">11:00</string>
+    <string name="a12">12:00</string>
+    <string name="a13">13:00</string>
+    <string name="a14">14:00</string>
+    <string name="a15">15:00</string>
+    <string name="a16">16:00</string>
+    <string name="a17">17:00</string>
+    <string name="a18">18:00</string>
+    <string name="a19">19:00</string>
+
+
+    <string name="forgetPassword">Forget my Password</string>
+
+    <string name="placesnearmemessage">I am looking for barbers</string>
+    <string name="placesnearmemessage2">I am looking for hairdressers</string>
 
 
 </resources>

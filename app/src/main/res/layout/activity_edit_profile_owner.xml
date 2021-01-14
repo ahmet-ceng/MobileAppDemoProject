@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Customer_Editprofile">
+    tools:context=".EditProfileOwner">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -13,19 +13,19 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
-            <include layout="@layout/actionbar" android:id="@+id/action_bareditprofile" > </include>
+            <include layout="@layout/actionbar" android:id="@+id/action_barEditProfileOwner" > </include>
 
             <ImageView
                 android:id="@+id/New_User_Icon"
                 android:layout_width="147dp"
                 android:layout_height="140dp"
-                android:layout_below="@id/action_bareditprofile"
+                android:layout_below="@id/action_barEditProfileOwner"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="60dp"
-                app:srcCompat="@mipmap/ic_edit_icon" />
+                app:srcCompat="@android:drawable/star_big_on" />
 
             <EditText
-                android:id="@+id/first_Name"
+                android:id="@+id/txtOwnerName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/New_User_Icon"
@@ -33,74 +33,49 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="30dp"
                 android:ems="10"
-                android:hint="@string/FirstName"
+                android:hint="@string/nametxt"
                 android:inputType="textPersonName"
                 android:textSize="14sp" />
 
             <EditText
-                android:id="@+id/Last_Name"
+                android:id="@+id/txtOwnerTelephone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/first_Name"
+                android:layout_below="@id/txtOwnerName"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="30dp"
                 android:ems="10"
-                android:hint="@string/LastName"
+                android:hint="@string/telehonetxt"
                 android:inputType="textPersonName"
                 android:textSize="14sp" />
 
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/txtOwnerAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/Last_Name"
+                android:layout_below="@id/txtOwnerTelephone"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="30dp"
                 android:ems="10"
-                android:hint="@string/Email"
+                android:hint="@string/addresstxt"
                 android:inputType="textEmailAddress"
                 android:textSize="14sp" />
 
-            <EditText
-                android:id="@+id/telephone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/email"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="30dp"
-                android:ems="10"
-                android:hint="@string/Telephone"
-                android:inputType="phone"
-                android:textSize="14sp" />
-
-            <EditText
-                android:id="@+id/Password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/telephone"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="30dp"
-                android:ems="10"
-                android:hint="@string/Password"
-                android:inputType="textPassword"
-                android:textSize="14sp" />
-
             <Button
-                android:id="@+id/update"
+                android:id="@+id/btnOwnerUpdate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/Password"
+                android:layout_below="@id/txtOwnerAddress"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
                 android:background="@color/pink"
-                android:text="@string/Update"
+                android:text="@string/update_button"
                 android:textColor="@android:color/white" />
 
         </RelativeLayout>
     </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

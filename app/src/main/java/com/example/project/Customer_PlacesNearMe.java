@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class PlacesNearMe extends AppCompatActivity {
+public class Customer_PlacesNearMe extends AppCompatActivity {
     private Toolbar toolbar;
     private Button btnBarber;
     private Button btnHairdresser;
@@ -23,7 +23,7 @@ public class PlacesNearMe extends AppCompatActivity {
         btnBarber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PlacesNearMe.this, BarberDetails.class);
+                Intent intent = new Intent(Customer_PlacesNearMe.this, Customer_BarberDetails.class);
                 startActivity(intent);
             }
         });
@@ -31,7 +31,7 @@ public class PlacesNearMe extends AppCompatActivity {
         btnHairdresser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PlacesNearMe.this, HairdresserDetails.class);
+                Intent intent = new Intent(Customer_PlacesNearMe.this, Customer_HairdresserDetails.class);
                 startActivity(intent);
             }
         });
