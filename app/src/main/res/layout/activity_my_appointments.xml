@@ -29,7 +29,6 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="100dp"
                 android:layout_marginRight="50dp"
-                android:background="@color/green"
                 android:text="@string/confirmed"
                 android:textAlignment="center"
                 android:textColor="#000000"
@@ -56,40 +55,6 @@
                 android:text="@string/Change"
                 android:textColor="#040404" />
 
-            <TextView
-                android:id="@+id/message1"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_below="@id/cancel"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="100dp"
-                android:layout_marginRight="50dp"
-                android:background="@color/yellow"
-                android:text="@string/Pending"
-                android:textAlignment="center"
-                android:textColor="#000000"
-                android:textSize="18sp" />
-
-            <Button
-                android:id="@+id/cancel1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/message1"
-                android:layout_marginLeft="50dp"
-                android:background="@color/red"
-                android:text="@string/Cancel"
-                android:textColor="#FFFFFF" />
-
-            <Button
-                android:id="@+id/change1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/message1"
-                android:layout_marginRight="50dp"
-                android:layout_toRightOf="@id/cancel"
-                android:background="@color/blue"
-                android:text="@string/Change"
-                android:textColor="#000000" />
         </RelativeLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

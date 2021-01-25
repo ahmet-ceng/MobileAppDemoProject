@@ -85,7 +85,6 @@ public class owner_saloon extends AppCompatActivity {
         HashMap map = new HashMap();
         map.put("usertype", owner);
 
-        reference.updateChildren(map);
 
         reference.child("users").child(currentuserid).updateChildren(map);
     }
@@ -99,7 +98,6 @@ public class owner_saloon extends AppCompatActivity {
         HashMap map = new HashMap();
         map.put("usertype", customer);
 
-        reference.updateChildren(map);
 
         reference.child("users").child(currentuserid).updateChildren(map);}
 

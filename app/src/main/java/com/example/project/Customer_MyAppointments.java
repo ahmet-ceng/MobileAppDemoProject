@@ -25,5 +25,10 @@ public class Customer_MyAppointments extends AppCompatActivity {
 
     }
 
+    private void userAppointment(){
 
+
+
+
+    }
 }
