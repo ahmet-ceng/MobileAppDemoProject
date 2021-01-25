@@ -2,17 +2,18 @@ package com.example.project;
 
 public class UserHelperClass {
 
-    String firstName, lastName, email, telephone, password;
+    String firstName, lastName, email, telephone, password,usertype;
 
     public UserHelperClass() {
     }
 
-    public UserHelperClass(String firstName, String lastName, String email, String telephone, String password) {
+    public UserHelperClass(String firstName, String lastName, String email, String telephone, String password, String usertype) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.telephone = telephone;
         this.password = password;
+        this.usertype = usertype;
     }
 
     public String getFirstName() {
@@ -22,6 +23,8 @@ public class UserHelperClass {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
+
+
 
     public String getLastName() {
         return lastName;
@@ -53,5 +56,13 @@ public class UserHelperClass {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getUsertype() {
+        return usertype;
+    }
+
+    public void setUsertype(String usertype) {
+        this.usertype = usertype;
     }
 }

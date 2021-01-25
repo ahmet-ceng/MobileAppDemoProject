@@ -28,9 +28,9 @@ public class Introduction extends AppCompatActivity {
 
     private FirebaseAuth auth;
 
+    String currentuserid;
 
-
-    private EditText password, phone, firstname, lastname, email, usertelephone;
+    private EditText password, phone, firstname, lastname, email;
     ProgressDialog logup;
 
     @Override
@@ -49,7 +49,6 @@ public class Introduction extends AppCompatActivity {
         phone = (EditText) findViewById(R.id.Telephone);
         firstname = (EditText) findViewById(R.id.FirstName);
         lastname = (EditText) findViewById(R.id.LastName);
-        usertelephone = (EditText) findViewById(R.id.Telephone);
 
 
         auth = FirebaseAuth.getInstance();
@@ -57,8 +56,8 @@ public class Introduction extends AppCompatActivity {
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addValuesToDatabase();
                 createNewAccount();
+
             }
         });
         logup = new ProgressDialog(this);
@@ -74,10 +73,11 @@ public class Introduction extends AppCompatActivity {
         String txtEmail = email.getText().toString();
         String telephone = phone.getText().toString();
         String txtPassword = password.getText().toString();
+        String usertype = "user";
 
-        UserHelperClass helperClass = new UserHelperClass(firstName, lastName, txtEmail, telephone, txtPassword);
+        UserHelperClass helperClass = new UserHelperClass(firstName, lastName, txtEmail, telephone, txtPassword,usertype);
 
-        reference.child(firstName).setValue(helperClass);
+        reference.child(currentuserid).setValue(helperClass);
     }
 
     private void createNewAccount() {
@@ -102,11 +102,15 @@ public class Introduction extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()) {
+                        currentuserid = auth.getCurrentUser().getUid();
+                        addValuesToDatabase();
+
                         Toast.makeText(Introduction.this, "REGISTRATION SUCCESSFUL!!!\n", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(Introduction.this, SignIn.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                         logup.dismiss();
+
                         finish();
                     }else {
                         String message = task.getException().toString();
