@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -50,6 +51,7 @@ public class Introduction extends AppCompatActivity {
 
 
 
+
     public void  init () {
 
         email = (EditText) findViewById(R.id.EmailCreate);
@@ -82,6 +84,7 @@ public class Introduction extends AppCompatActivity {
         String telephone = phone.getText().toString();
         String txtPassword = password.getText().toString();
         String usertype = "user";
+
 
         UserHelperClass helperClass = new UserHelperClass(firstName, lastName, txtEmail, telephone, txtPassword,usertype);
 

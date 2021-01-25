@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -26,7 +27,7 @@ public class owner_saloon extends AppCompatActivity {
     private Button btn_owner;
     FirebaseDatabase rootNode;
     DatabaseReference reference;
-
+    private TextView testView;
     private FirebaseAuth auth;
     String currentuserid;
 
@@ -39,6 +40,7 @@ public class owner_saloon extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_owner_saloon);
         auth = FirebaseAuth.getInstance();
+
 
         currentuserid = auth.getCurrentUser().getUid();
         checkuser();
@@ -116,8 +118,8 @@ public class owner_saloon extends AppCompatActivity {
                 String user = dataSnapshot.getValue(String.class);
                 Log.e(TAG, "onDataChange: "+ user );
 
-                if (user.equals(usr)){
-                    Intent intent = new Intent(owner_saloon.this,owner_saloon.class);
+                if (user.equals(cst)){
+                    Intent intent = new Intent(owner_saloon.this,Customer_MainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                     finish();
@@ -129,10 +131,7 @@ public class owner_saloon extends AppCompatActivity {
                     finish();
 
                 }else{
-                    Intent intent = new Intent(owner_saloon.this,Customer_MainActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(intent);
-                    finish();
+
                 }
             }
 

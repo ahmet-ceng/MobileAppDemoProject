@@ -61,6 +61,13 @@
                 android:layout_marginRight="100dp"
                 android:backgroundTint="@color/orange"
                 android:text="@string/owner1" />
+
+            <TextView
+                android:id="@+id/testview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/addresstxt"
+                android:text="TextView" />
         </RelativeLayout>
     </ScrollView>
 
