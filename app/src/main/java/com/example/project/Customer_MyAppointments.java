@@ -56,6 +56,14 @@ public class Customer_MyAppointments extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Customer_MyAppointments.this, customerNewAppointment.class);
+
+                rootNode = FirebaseDatabase.getInstance();
+                reference = rootNode.getReference();
+                String zero = "0";
+                HashMap map4 = new HashMap();
+                map4.put("status", zero);
+                reference.child("Appointments").child("10").updateChildren(map4);
+
                 startActivity(intent);
             }
         });
@@ -75,12 +83,19 @@ public class Customer_MyAppointments extends AppCompatActivity {
                         reference = rootNode.getReference();
                         String apt = "no appointment";
                         String pending = "pending";
-
+                        txtmessage.setBackgroundColor(getResources().getColor(R.color.red));
                         currentuserid = auth.getCurrentUser().getUid();
                         HashMap map2 = new HashMap();
                         map2.put("date", apt);
                         map2.put("status", pending);
                         reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
+
+
+                        String zero = "0";
+
+                        HashMap map3 = new HashMap();
+                        map3.put("status", zero);
+                        reference.child("Appointments").child("10").updateChildren(map3);
 
                             }
                 });
