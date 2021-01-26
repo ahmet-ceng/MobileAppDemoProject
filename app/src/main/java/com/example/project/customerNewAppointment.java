@@ -93,8 +93,13 @@ public class customerNewAppointment extends AppCompatActivity {
                         map2.put("date", apt);
                         reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
                         HashMap map = new HashMap();
-                        map.put("7", full);
-                        reference.child("Appointments").updateChildren(map);
+                        map.put("status", full);
+                        reference.child("Appointments").child("7").updateChildren(map);
+
+
+                        HashMap map4 = new HashMap();
+                        map4.put("UID", currentuserid);
+                        reference.child("Appointments").child("7").updateChildren(map4);
 
                         String pending = "pending";
                         HashMap map3 = new HashMap();
@@ -127,8 +132,14 @@ public class customerNewAppointment extends AppCompatActivity {
                         map2.put("date", apt);
                         reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
                         HashMap map = new HashMap();
-                        map.put("8", full);
-                        reference.child("Appointments").updateChildren(map);
+                        map.put("status", full);
+                        reference.child("Appointments").child("8").updateChildren(map);
+
+
+                        HashMap map4 = new HashMap();
+                        map4.put("UID", currentuserid);
+                        reference.child("Appointments").child("8").updateChildren(map4);
+
                         String pending = "pending";
                         HashMap map3 = new HashMap();
                         map3.put("status", pending);
@@ -160,8 +171,14 @@ public class customerNewAppointment extends AppCompatActivity {
                         map2.put("date", apt);
                         reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
                         HashMap map = new HashMap();
-                        map.put("9", full);
-                        reference.child("Appointments").updateChildren(map);
+                        map.put("status", full);
+                        reference.child("Appointments").child("9").updateChildren(map);
+
+
+                        HashMap map4 = new HashMap();
+                        map4.put("UID", currentuserid);
+                        reference.child("Appointments").child("9").updateChildren(map4);
+
                         String pending = "pending";
                         HashMap map3 = new HashMap();
                         map3.put("status", pending);
@@ -193,8 +210,14 @@ public class customerNewAppointment extends AppCompatActivity {
                         map2.put("date", apt);
                         reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
                         HashMap map = new HashMap();
-                        map.put("10", full);
-                        reference.child("Appointments").updateChildren(map);
+                        map.put("status", full);
+                        reference.child("Appointments").child("10").updateChildren(map);
+
+
+                        HashMap map4 = new HashMap();
+                        map4.put("UID", currentuserid);
+                        reference.child("Appointments").child("10").updateChildren(map4);
+
                         String pending = "pending";
                         HashMap map3 = new HashMap();
                         map3.put("status", pending);
@@ -226,8 +249,14 @@ public class customerNewAppointment extends AppCompatActivity {
                         map2.put("date", apt);
                         reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
                         HashMap map = new HashMap();
-                        map.put("11", full);
-                        reference.child("Appointments").updateChildren(map);
+                        map.put("status", full);
+                        reference.child("Appointments").child("11").updateChildren(map);
+
+
+                        HashMap map4 = new HashMap();
+                        map4.put("UID", currentuserid);
+                        reference.child("Appointments").child("11").updateChildren(map4);
+
                         String pending = "pending";
                         HashMap map3 = new HashMap();
                         map3.put("status", pending);
@@ -259,8 +288,14 @@ public class customerNewAppointment extends AppCompatActivity {
                         map2.put("date", apt);
                         reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
                         HashMap map = new HashMap();
-                        map.put("12", full);
-                        reference.child("Appointments").updateChildren(map);
+                        map.put("status", full);
+                        reference.child("Appointments").child("12").updateChildren(map);
+
+
+                        HashMap map4 = new HashMap();
+                        map4.put("UID", currentuserid);
+                        reference.child("Appointments").child("12").updateChildren(map4);
+
                         String pending = "pending";
                         HashMap map3 = new HashMap();
                         map3.put("status", pending);
@@ -292,8 +327,14 @@ public class customerNewAppointment extends AppCompatActivity {
                         map2.put("date", apt);
                         reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
                         HashMap map = new HashMap();
-                        map.put("13", full);
-                        reference.child("Appointments").updateChildren(map);
+                        map.put("status", full);
+                        reference.child("Appointments").child("13").updateChildren(map);
+
+
+                        HashMap map4 = new HashMap();
+                        map4.put("UID", currentuserid);
+                        reference.child("Appointments").child("13").updateChildren(map4);
+
                         String pending = "pending";
                         HashMap map3 = new HashMap();
                         map3.put("status", pending);
@@ -325,8 +366,14 @@ public class customerNewAppointment extends AppCompatActivity {
                         map2.put("date", apt);
                         reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
                         HashMap map = new HashMap();
-                        map.put("14", full);
-                        reference.child("Appointments").updateChildren(map);
+                        map.put("status", full);
+                        reference.child("Appointments").child("14").updateChildren(map);
+
+
+                        HashMap map4 = new HashMap();
+                        map4.put("UID", currentuserid);
+                        reference.child("Appointments").child("14").updateChildren(map4);
+
                         String pending = "pending";
                         HashMap map3 = new HashMap();
                         map3.put("status", pending);
@@ -358,8 +405,14 @@ public class customerNewAppointment extends AppCompatActivity {
                         map2.put("date", apt);
                         reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
                         HashMap map = new HashMap();
-                        map.put("15", full);
-                        reference.child("Appointments").updateChildren(map);
+                        map.put("status", full);
+                        reference.child("Appointments").child("15").updateChildren(map);
+
+
+                        HashMap map4 = new HashMap();
+                        map4.put("UID", currentuserid);
+                        reference.child("Appointments").child("15").updateChildren(map4);
+
                         String pending = "pending";
                         HashMap map3 = new HashMap();
                         map3.put("status", pending);
@@ -391,13 +444,18 @@ public class customerNewAppointment extends AppCompatActivity {
                         map2.put("date", apt);
                         reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
                         HashMap map = new HashMap();
-                        map.put("16", full);
-                        reference.child("Appointments").updateChildren(map);
+                        map.put("status", full);
+                        reference.child("Appointments").child("16").updateChildren(map);
+
+
+                        HashMap map4 = new HashMap();
+                        map4.put("UID", currentuserid);
+                        reference.child("Appointments").child("16").updateChildren(map4);
+
                         String pending = "pending";
                         HashMap map3 = new HashMap();
                         map3.put("status", pending);
-                        reference = rootNode.getReference("users/"+currentuserid+"/Current Appointments");
-                        reference.updateChildren(map3);
+                        reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map3);
                     }
                 });
                 builder.show();
@@ -425,8 +483,13 @@ public class customerNewAppointment extends AppCompatActivity {
                         map2.put("date", apt);
                         reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
                         HashMap map = new HashMap();
-                        map.put("17", full);
-                        reference.child("Appointments").updateChildren(map);
+                        map.put("status", full);
+                        reference.child("Appointments").child("17").updateChildren(map);
+
+
+                        HashMap map4 = new HashMap();
+                        map4.put("UID", currentuserid);
+                        reference.child("Appointments").child("17").updateChildren(map4);
 
                         String pending = "pending";
                         HashMap map3 = new HashMap();
@@ -459,8 +522,14 @@ public class customerNewAppointment extends AppCompatActivity {
                         map2.put("date", apt);
                         reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
                         HashMap map = new HashMap();
-                        map.put("18", full);
-                        reference.child("Appointments").updateChildren(map);
+                        map.put("status", full);
+                        reference.child("Appointments").child("18").updateChildren(map);
+
+
+                        HashMap map4 = new HashMap();
+                        map4.put("UID", currentuserid);
+                        reference.child("Appointments").child("18").updateChildren(map4);
+
                         String pending = "pending";
                         HashMap map3 = new HashMap();
                         map3.put("status", pending);
@@ -486,7 +555,7 @@ public class customerNewAppointment extends AppCompatActivity {
         for (final String i : hours) {
             counter++;
 
-            DatabaseReference myRef = database.getReference("Appointments/" + i);
+            DatabaseReference myRef = database.getReference("Appointments/" + i+"/status");
             Log.e(TAG,"myref"+ myRef+"  i :"+i+ "counter  "+counter);
 
             final String empty = "0";

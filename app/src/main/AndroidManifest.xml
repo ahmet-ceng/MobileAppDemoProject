@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         android:usesCleartextTraffic="true"
-        <activity android:name=".deneme2" android:parentActivityName=".OwnerAppointment"></activity>
         <activity
             android:name=".deneme1"
             android:parentActivityName=".OwnerAppointment" />
