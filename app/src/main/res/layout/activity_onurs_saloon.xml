@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Mysaloon">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <include
+                android:id="@+id/actionBarLogin"
+                layout="@layout/actionbar"></include>
+
+            <ImageView
+                android:id="@+id/CustimageView"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/actionBarLogin"
+                android:layout_marginTop="50dp"
+                app:srcCompat="@android:drawable/btn_star_big_on" />
+
+            <TextView
+                android:id="@+id/Custnametxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/CustimageView"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="60dp"
+                android:width="110dp"
+                android:text="@string/nametxt"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/Custnamedb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignWithParentIfMissing="false"
+                android:layout_alignTop="@id/Custnametxt"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@id/Custnametxt"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/Custtelephonetxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Custnametxt"
+                android:layout_marginTop="30dp"
+                android:width="110dp"
+                android:layout_marginLeft="15dp"
+                android:text="@string/telehonetxt"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/Custtelephonedb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignWithParentIfMissing="false"
+                android:layout_alignTop="@id/Custtelephonetxt"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@id/Custtelephonetxt"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/Custaddresstxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Custtelephonetxt"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="15dp"
+                android:width="110dp"
+                android:text="@string/addresstxt"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/Custaddressdb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignWithParentIfMissing="false"
+                android:layout_alignTop="@id/Custaddresstxt"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@id/Custaddresstxt"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/Custratingtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Custaddresstxt"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="80dp"
+                android:width="110dp"
+                android:text="@string/ratingtxt"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/Custratingdb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignWithParentIfMissing="false"
+                android:layout_alignTop="@id/Custratingtxt"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@id/Custratingtxt"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/Custcommentstxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Custratingtxt"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="15dp"
+                android:width="110dp"
+                android:text="@string/commentstxt"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/Custcommentsdb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignWithParentIfMissing="false"
+                android:layout_marginLeft="50dp"
+                android:layout_alignTop="@id/Custcommentstxt"
+                android:layout_toRightOf="@id/Custcommentstxt"
+                android:text="TextView" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
