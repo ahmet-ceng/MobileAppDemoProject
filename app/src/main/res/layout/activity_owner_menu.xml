@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/Untitled"
     tools:context=".Owner_menu">
 
     <ScrollView
@@ -26,6 +27,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="100dp"
                 android:text="@string/welcome"
+                android:textColor="#FFFFFF"
                 android:textSize="22dp" />
 
             <Button

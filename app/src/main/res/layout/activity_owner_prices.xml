@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/Untitled"
     tools:context=".ownerPrices" >
 
     <ScrollView
@@ -27,7 +28,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="70dp"
                 android:text="@string/Haircut"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp" />
 
             <EditText
@@ -38,6 +39,10 @@
                 android:layout_marginLeft="20dp"
                 android:layout_toRightOf="@id/textView2"
                 android:hint="@string/price_hair"
+                android:textColor="#F4EBEB"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#A5A1A1"
+                android:textColorLink="#FFFFFF"
                 android:textSize="20sp" />
 
             <TextView
@@ -48,7 +53,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="50dp"
                 android:text="@string/Beard_Shave"
-                android:textColor="#000000"
+                android:textColor="#FDFDFD"
                 android:textSize="20sp" />
 
             <EditText
@@ -59,6 +64,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_toRightOf="@id/textView4"
                 android:hint="@string/price_hair"
+                android:textColorHint="#A5A1A1"
                 android:textSize="20sp" />
 
             <TextView
@@ -69,7 +75,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="50dp"
                 android:text="@string/Wax"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp" />
 
             <EditText
@@ -80,6 +86,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_toRightOf="@id/textView8"
                 android:hint="@string/price_hair"
+                android:textColorHint="#A5A1A1"
                 android:textSize="20sp" />
 
             <TextView
@@ -90,7 +97,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="50dp"
                 android:text="@string/Hair_washing"
-                android:textColor="#000000"
+                android:textColor="#FDFDFD"
                 android:textSize="20sp" />
 
             <EditText
@@ -101,6 +108,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_toRightOf="@id/textView10"
                 android:hint="@string/price_hair"
+                android:textColorHint="#A5A1A1"
                 android:textSize="20sp" />
 
             <Button

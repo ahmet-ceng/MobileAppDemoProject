@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/Untitled"
     tools:context=".Customer_PlacesNearMe">
 
     <ScrollView
@@ -22,7 +23,7 @@
                 android:layout_marginTop="150dp"
                 android:text="@string/placesnearmemessage"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:textSize="18sp" />
 
             <include
@@ -48,7 +49,7 @@
                 android:layout_marginTop="50dp"
                 android:text="@string/placesnearmemessage2"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:textSize="18sp" />
 
             <Button

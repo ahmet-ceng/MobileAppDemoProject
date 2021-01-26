@@ -1,0 +1,69 @@
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>apply plugin: 'com.android.application'\r\napply plugin: 'com.google.gms.google-services'\r\n\r\nandroid {\r\n    compileSdkVersion 30\r\n    buildToolsVersion \"30.0.2\"\r\n\r\n    defaultConfig {\r\n        applicationId \"com.example.project\"\r\n        minSdkVersion 24\r\n        targetSdkVersion 30\r\n        versionCode 1\r\n        versionName \"1.0\"\r\n\r\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            minifyEnabled false\r\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\r\n        }\r\n    }\r\n}\r\n\r\ndependencies {\r\n    implementation fileTree(dir: \"libs\", include: [\"*.jar\"])\r\n    implementation 'androidx.appcompat:appcompat:1.2.0'\r\n    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'\r\n    implementation 'com.google.firebase:firebase-auth:16.0.5'\r\n    implementation 'com.google.firebase:firebase-database:16.0.4'\r\n    testImplementation 'junit:junit:4.12'\r\n    androidTestImplementation 'androidx.test.ext:junit:1.1.2'\r\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/build.gradle	(revision 710f216f1c95407d63eab25857a56b12f9b6dfce)
++++ app/build.gradle	(date 1611569550348)
+@@ -27,8 +27,10 @@
+     implementation fileTree(dir: "libs", include: ["*.jar"])
+     implementation 'androidx.appcompat:appcompat:1.2.0'
+     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+-    implementation 'com.google.firebase:firebase-auth:16.0.5'
+-    implementation 'com.google.firebase:firebase-database:16.0.4'
++
++    implementation 'com.google.firebase:firebase-database:19.6.0'
++    implementation 'com.google.firebase:firebase-auth:20.0.2'
++
+     testImplementation 'junit:junit:4.12'
+     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+Index: app/src/main/java/com/example/project/UserTypeHelperCustomer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/project/UserTypeHelperCustomer.java	(date 1611578702139)
++++ app/src/main/java/com/example/project/UserTypeHelperCustomer.java	(date 1611578702139)
+@@ -0,0 +1,24 @@
++package com.example.project;
++
++public class UserTypeHelperCustomer {
++    String customer;
++
++    public UserTypeHelperCustomer() {
++    }
++
++    public UserTypeHelperCustomer(String customer) {
++        this.customer = customer;
++
++    }
++
++    public String getCustomer() {
++        return customer;
++    }
++
++    public void setCustomer(String customer) {
++        this.customer = customer;
++    }
++
++
++
++}
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/vcs.xml	(date 1611568675238)
++++ .idea/vcs.xml	(date 1611568675238)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
