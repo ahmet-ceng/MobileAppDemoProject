@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/Untitled"
+    android:background="@drawable/untitled"
     tools:context=".Owner_menu">
 
     <ScrollView
@@ -26,9 +26,10 @@
                 android:layout_below="@id/actionBarLogin"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="100dp"
+                android:fontFamily="@font/allan"
                 android:text="@string/welcome"
                 android:textColor="#FFFFFF"
-                android:textSize="22dp" />
+                android:textSize="36sp" />
 
             <Button
                 android:id="@+id/btnMySaloon"

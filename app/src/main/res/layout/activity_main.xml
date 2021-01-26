@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/Untitled"
+    android:background="@drawable/untitled"
 
     tools:context=".Customer_MainActivity">
 
@@ -30,10 +30,10 @@
                 android:layout_below="@id/action_barMain"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="100dp"
+                android:fontFamily="@font/allan"
                 android:text="@string/welcome"
                 android:textAlignment="center"
-                android:textColor="#000000"
-                android:textSize="24sp" />
+                android:textSize="36sp" />
 
             <Button
                 android:id="@+id/myplaces"

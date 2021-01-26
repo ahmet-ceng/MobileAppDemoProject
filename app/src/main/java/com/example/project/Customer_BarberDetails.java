@@ -34,7 +34,7 @@ public class Customer_BarberDetails extends AppCompatActivity {
         setContentView(R.layout.activity_barber_details);
         init();
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("NearPlaces/Barbers/onur");
+        DatabaseReference myRef = database.getReference("Saloon/OnurSaloon/Name");
 
         myRef.addValueEventListener(new ValueEventListener() {
             @Override

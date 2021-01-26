@@ -5,13 +5,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Customer_MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
@@ -19,13 +26,17 @@ public class Customer_MainActivity extends AppCompatActivity {
     private Button Btnmyappointment;
     private Button btnnewappointment;
     private Button btnplacesnearme;
+    FirebaseDatabase rootNode;
+    private String currentuserid;
+    DatabaseReference reference;
 
+    private TextView welcome;
     private FirebaseAuth auth;
     public void init(){
         auth = FirebaseAuth.getInstance();
         toolbar = findViewById(R.id.action_barMain);
         setSupportActionBar(toolbar);
-
+        welcome = findViewById(R.id.welcome);
         btnmyplaces = findViewById(R.id.myplaces);
         btnmyplaces.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,12 +77,33 @@ public class Customer_MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
+        welcome();
     }
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.menu,menu);
 
         return true;
+    }
+
+    public void welcome(){
+        rootNode = FirebaseDatabase.getInstance();
+        reference = rootNode.getReference();
+        currentuserid = auth.getCurrentUser().getUid();
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("users/"+currentuserid+"/firstName");
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String id = dataSnapshot.getValue(String.class);
+                welcome.setText("Welcome "+id);
+                welcome.setTextColor(getResources().getColor(R.color.white));
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     @Override
