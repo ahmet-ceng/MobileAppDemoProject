@@ -42,22 +42,22 @@ public class Mysaloon extends AppCompatActivity {
         txtcomment = findViewById(R.id.commentsdb);
         txtrating = findViewById(R.id.ratingdb);
     }
-        public void TakeValue() {
-            rootNode = FirebaseDatabase.getInstance();
-            reference = rootNode.getReference();
-            final FirebaseDatabase database = FirebaseDatabase.getInstance();
-            DatabaseReference myRef = database.getReference("Saloon/OnurSaloon/Name");
-            myRef.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    String name = dataSnapshot.getValue(String.class);
-                    txtname.setText(name);
-                }
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
+    public void TakeValue() {
+        rootNode = FirebaseDatabase.getInstance();
+        reference = rootNode.getReference();
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Saloon/OnurSaloon/Name");
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String name = dataSnapshot.getValue(String.class);
+                txtname.setText(name);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                }
-            });
+            }
+        });
 
     }
     public void TakeValue1() {

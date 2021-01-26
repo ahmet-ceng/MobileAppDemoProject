@@ -3,6 +3,7 @@ package com.example.project;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -68,6 +69,9 @@ public class EditProfileOwner extends AppCompatActivity {
                 HashMap map5 = new HashMap();
                 map5.put("Comment", comment);
                 reference.child("Saloon").child("OnurSaloon").updateChildren(map5);
+
+                Intent intent = new Intent(EditProfileOwner.this, Mysaloon.class);
+                startActivity(intent);
             }
         });
     }

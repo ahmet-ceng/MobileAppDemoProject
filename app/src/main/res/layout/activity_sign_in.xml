@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/wp3001176"
     tools:context=".SignIn">
+
 
 
     <ScrollView
@@ -26,8 +28,8 @@
                 android:layout_width="138dp"
                 android:layout_height="122dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="80dp"
-                app:srcCompat="@mipmap/ic_icon" />
+                android:layout_marginTop="100dp"
+                app:srcCompat="@drawable/baseline_login_24" />
 
             <EditText
                 android:id="@+id/EmailSıngIn"
@@ -39,7 +41,11 @@
                 android:layout_marginRight="30dp"
                 android:ems="10"
                 android:hint="@string/Email"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:textColor="#FFFBFB"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF" />
 
             <EditText
                 android:id="@+id/PasswordSıgnIn"
@@ -51,7 +57,11 @@
                 android:layout_marginRight="30dp"
                 android:ems="10"
                 android:hint="@string/Password"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textColor="#FFFBFB"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF" />
 
             <Button
                 android:id="@+id/SignInBtn"
