@@ -29,9 +29,10 @@
                 android:layout_below="@id/CreateAccountIcon"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
+                android:fontFamily="cursive"
                 android:text="@string/CreateAnAccount"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp" />
+                android:textSize="30sp" />
 
             <EditText
                 android:id="@+id/FirstName"
@@ -41,7 +42,10 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="30dp"
+                android:backgroundTint="#FAF6F6"
+                android:backgroundTintMode="src_in"
                 android:ems="10"
+                android:fontFamily="@font/allan"
                 android:hint="@string/FirstName"
                 android:inputType="textPersonName"
                 android:textColor="#FBFBFB"
@@ -57,7 +61,10 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="30dp"
+                android:backgroundTint="#FAF6F6"
+                android:backgroundTintMode="src_in"
                 android:ems="10"
+                android:fontFamily="@font/allan"
                 android:hint="@string/LastName"
                 android:inputType="textPersonName"
                 android:textColor="#FBFBFB"
@@ -73,7 +80,10 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="30dp"
+                android:backgroundTint="#FAF6F6"
+                android:backgroundTintMode="src_in"
                 android:ems="10"
+                android:fontFamily="@font/allan"
                 android:hint="@string/Email"
                 android:inputType="textEmailAddress"
                 android:textColor="#FBFBFB"
@@ -89,7 +99,10 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="30dp"
+                android:backgroundTint="#FAF6F6"
+                android:backgroundTintMode="src_in"
                 android:ems="10"
+                android:fontFamily="@font/allan"
                 android:hint="@string/Telephone"
                 android:inputType="phone"
                 android:textColor="#FBFBFB"
@@ -105,7 +118,10 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="30dp"
+                android:backgroundTint="#FAF6F6"
+                android:backgroundTintMode="src_in"
                 android:ems="10"
+                android:fontFamily="@font/allan"
                 android:hint="@string/Password"
                 android:inputType="textPassword"
                 android:textColor="#FBFBFB"
@@ -122,9 +138,11 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
                 android:background="@color/pink"
+                android:fontFamily="@font/allan"
                 android:text="@string/SignUp"
                 android:textAllCaps="false"
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/AlreadyHaveAnAccount"
@@ -135,9 +153,11 @@
                 android:layout_marginTop="19dp"
                 android:layout_marginRight="30dp"
                 android:background="@color/orange"
+                android:fontFamily="@font/allan"
                 android:text="@string/AlreadyHaveAnAccount"
                 android:textAllCaps="false"
-                android:textColor="#F6F4F4" />
+                android:textColor="#F6F4F4"
+                android:textSize="18sp" />
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

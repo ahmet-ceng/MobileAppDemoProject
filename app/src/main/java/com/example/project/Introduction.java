@@ -97,9 +97,9 @@ public class Introduction extends AppCompatActivity {
 
 
         if (TextUtils.isEmpty(txtEmail)) {
-            Toast.makeText(this, "E-MAIL FIELD CANNOT BE EMPTY!!!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "E-mail field can't be empty!!", Toast.LENGTH_LONG).show();
         } else if (TextUtils.isEmpty(txtPassword)) {
-            Toast.makeText(this, "PASSWORD FIELD CANNOT BE EMPTY!!!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Password field can't be empty!!", Toast.LENGTH_LONG).show();
         } else {
             //progress
             logup.setTitle("Signin Up...");
@@ -116,7 +116,7 @@ public class Introduction extends AppCompatActivity {
                         currentuserid = auth.getCurrentUser().getUid();
                         addValuesToDatabase();
 
-                        Toast.makeText(Introduction.this, "REGISTRATION SUCCESSFUL!!!\n", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Introduction.this, "Registration Successful!!!\n", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(Introduction.this, SignIn.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
@@ -166,7 +166,9 @@ public class Introduction extends AppCompatActivity {
 
     private void checkuser() {
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("users/4MfzrmATc1SLqCVUaEpgPHyKu9Y2/usertype");
+        currentuserid = auth.getCurrentUser().getUid();
+
+        DatabaseReference myRef = database.getReference("users/"+currentuserid+"/usertype");
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -174,10 +176,7 @@ public class Introduction extends AppCompatActivity {
                 Log.e(TAG, "onDataChange: "+user );
 
                 if (user == "user"){
-                    Intent intent = new Intent(Introduction.this,owner_saloon.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(intent);
-                    finish();
+
 
                 }else if(user=="owner"){
                     Intent intent = new Intent(Introduction.this,Owner_menu.class);
@@ -185,7 +184,7 @@ public class Introduction extends AppCompatActivity {
                     startActivity(intent);
                     finish();
 
-                }else{
+                }else if(user=="customer"){
                     Intent intent = new Intent(Introduction.this,Customer_MainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);

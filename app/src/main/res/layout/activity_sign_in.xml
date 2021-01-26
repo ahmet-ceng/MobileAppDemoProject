@@ -40,6 +40,7 @@
                 android:layout_marginTop="100dp"
                 android:layout_marginRight="30dp"
                 android:ems="10"
+                android:fontFamily="@font/allan"
                 android:hint="@string/Email"
                 android:inputType="textEmailAddress"
                 android:textColor="#FFFBFB"
@@ -56,6 +57,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="30dp"
                 android:ems="10"
+                android:fontFamily="@font/allan"
                 android:hint="@string/Password"
                 android:inputType="textPassword"
                 android:textColor="#FFFBFB"
@@ -72,9 +74,11 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
                 android:background="@color/pink"
+                android:fontFamily="@font/allan"
                 android:text="@string/SıgnIn"
                 android:textAllCaps="false"
-                android:textColor="#FAFAFA" />
+                android:textColor="#FAFAFA"
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/btnForgetPassword"
@@ -86,8 +90,10 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="30dp"
                 android:backgroundTint="@color/orange"
+                android:fontFamily="@font/allan"
                 android:text="@string/forgetPassword"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textSize="18sp" />
 
         </RelativeLayout>
 

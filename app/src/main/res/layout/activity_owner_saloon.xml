@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/wp3001176"
     tools:context=".owner_saloon">
     <ScrollView
         android:layout_width="match_parent"
@@ -12,21 +13,12 @@
         <RelativeLayout
             android:id="@+id/customertext1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"><![CDATA[
 
 
             />
 
-            <TextView
-                android:id="@+id/telephonedb"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="150dp"
-                android:shadowColor="#000000"
-                android:text="@string/customer"
-                android:textColor="#000000"
-                android:textSize="22sp" />
+            ]]>
 
             <Button
                 android:id="@+id/btncustomer"
@@ -37,6 +29,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="100dp"
                 android:backgroundTint="@color/orange"
+                android:fontFamily="@font/allan"
                 android:text="@string/customer1" />
 
             <TextView
@@ -46,8 +39,9 @@
                 android:layout_below="@id/btncustomer"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="150dp"
+                android:fontFamily="@font/akronim"
                 android:text="@string/owner"
-                android:textColor="#000000"
+                android:textColor="#FDFCFC"
                 android:textSize="22dp" />
 
             <Button
@@ -60,14 +54,20 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="100dp"
                 android:backgroundTint="@color/orange"
+                android:fontFamily="@font/allan"
                 android:text="@string/owner1" />
 
             <TextView
-                android:id="@+id/testview"
-                android:layout_width="match_parent"
+                android:id="@+id/telephonedb"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/addresstxt"
-                android:text="TextView" />
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="250dp"
+                android:fontFamily="@font/akronim"
+                android:shadowColor="#000000"
+                android:text="@string/customer"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp" />
         </RelativeLayout>
     </ScrollView>
 
