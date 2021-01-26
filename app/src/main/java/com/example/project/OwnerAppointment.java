@@ -277,369 +277,817 @@ public class OwnerAppointment extends AppCompatActivity {
         btn8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(OwnerAppointment.this);
-                builder.setTitle("Appointment");
-                builder.setMessage("Do you want to make an appointment?");
-                builder.setIcon(android.R.drawable.ic_dialog_alert);
-                builder.setNegativeButton("No", null);
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("Appointments/8/status");
+                Log.e(TAG, "ref: " + myRef);
+
+                myRef.addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String status = dataSnapshot.getValue(String.class);
 
                         rootNode = FirebaseDatabase.getInstance();
                         reference = rootNode.getReference();
-                        String full = "1";
-                        String apt = "26.01.2021 - 08:00";
-                        currentuserid = auth.getCurrentUser().getUid();
-                        HashMap map2 = new HashMap();
-                        map2.put("date", apt);
-                        reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
-                        HashMap map = new HashMap();
-                        map.put("8", full);
-                        reference.child("Appointments").updateChildren(map);
-                        String pending = "pending";
-                        HashMap map3 = new HashMap();
-                        map3.put("status", pending);
-                        reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map3);
+                        if (status.equals("2")) {
+                            information("8");
+
+                        } else if (status.equals("0")) {
+                        }
+
+                        else if (status.equals("1")) {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(OwnerAppointment.this);
+                            builder.setTitle("Appointment");
+                            builder.setMessage("Customer appointment is pending. Do you approve?");
+                            builder.setIcon(android.R.drawable.ic_dialog_alert);
+                            builder.setNegativeButton("Refuse", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                    rootNode = FirebaseDatabase.getInstance();
+                                    reference = rootNode.getReference();
+                                    String full = "0";
+                                    HashMap map2 = new HashMap();
+                                    map2.put("status", full);
+                                    reference.child("Appointments").child("8").updateChildren(map2);
+                                    update("8","Refused");
+
+                                }
+                            });
+                            builder.setNeutralButton("Information", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                    information("8");
+                                }
+                            });
+                            builder.setPositiveButton("Approve", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.cancel();
+
+                                    rootNode = FirebaseDatabase.getInstance();
+                                    reference = rootNode.getReference();
+                                    String full = "2";
+                                    HashMap map2 = new HashMap();
+                                    map2.put("status", full);
+                                    reference.child("Appointments").child("8").updateChildren(map2);
+                                    update("8","Approved");
+
+
+                                }
+                            });
+                            builder.show();
+                        }
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
                     }
                 });
-                builder.show();
-            }
-        });
+            }});
         btn9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(OwnerAppointment.this);
-                builder.setTitle("Appointment");
-                builder.setMessage("Do you want to make an appointment?");
-                builder.setIcon(android.R.drawable.ic_dialog_alert);
-                builder.setNegativeButton("No", null);
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("Appointments/9/status");
+                Log.e(TAG, "ref: " + myRef);
+
+                myRef.addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String status = dataSnapshot.getValue(String.class);
 
                         rootNode = FirebaseDatabase.getInstance();
                         reference = rootNode.getReference();
-                        String full = "1";
-                        String apt = "26.01.2021 - 09:00";
-                        currentuserid = auth.getCurrentUser().getUid();
-                        HashMap map2 = new HashMap();
-                        map2.put("date", apt);
-                        reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
-                        HashMap map = new HashMap();
-                        map.put("9", full);
-                        reference.child("Appointments").updateChildren(map);
-                        String pending = "pending";
-                        HashMap map3 = new HashMap();
-                        map3.put("status", pending);
-                        reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map3);
+                        if (status.equals("2")) {
+                            information("9");
+
+                        } else if (status.equals("0")) {
+                        }
+
+                        else if (status.equals("1")) {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(OwnerAppointment.this);
+                            builder.setTitle("Appointment");
+                            builder.setMessage("Customer appointment is pending. Do you approve?");
+                            builder.setIcon(android.R.drawable.ic_dialog_alert);
+                            builder.setNegativeButton("Refuse", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                    rootNode = FirebaseDatabase.getInstance();
+                                    reference = rootNode.getReference();
+                                    String full = "0";
+                                    HashMap map2 = new HashMap();
+                                    map2.put("status", full);
+                                    reference.child("Appointments").child("9").updateChildren(map2);
+                                    update("9","Refused");
+
+                                }
+                            });
+                            builder.setNeutralButton("Information", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                    information("9");
+                                }
+                            });
+                            builder.setPositiveButton("Approve", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.cancel();
+
+                                    rootNode = FirebaseDatabase.getInstance();
+                                    reference = rootNode.getReference();
+                                    String full = "2";
+                                    HashMap map2 = new HashMap();
+                                    map2.put("status", full);
+                                    reference.child("Appointments").child("9").updateChildren(map2);
+                                    update("9","Approved");
+
+
+                                }
+                            });
+                            builder.show();
+                        }
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
                     }
                 });
-                builder.show();
-            }
-        });
+            }});
         btn10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("Appointments/10/status");
+                Log.e(TAG, "ref: " + myRef);
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(OwnerAppointment.this);
-                builder.setTitle("Appointment");
-                builder.setMessage("Do you want to make an appointment?");
-                builder.setIcon(android.R.drawable.ic_dialog_alert);
-                builder.setNegativeButton("No", null);
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                myRef.addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String status = dataSnapshot.getValue(String.class);
 
                         rootNode = FirebaseDatabase.getInstance();
                         reference = rootNode.getReference();
-                        String full = "1";
-                        String apt = "26.01.2021 - 10:00";
-                        currentuserid = auth.getCurrentUser().getUid();
-                        HashMap map2 = new HashMap();
-                        map2.put("date", apt);
-                        reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
-                        HashMap map = new HashMap();
-                        map.put("10", full);
-                        reference.child("Appointments").updateChildren(map);
-                        String pending = "pending";
-                        HashMap map3 = new HashMap();
-                        map3.put("status", pending);
-                        reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map3);
+                        if (status.equals("2")) {
+                            information("10");
+
+                        } else if (status.equals("0")) {
+                        }
+
+                        else if (status.equals("1")) {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(OwnerAppointment.this);
+                            builder.setTitle("Appointment");
+                            builder.setMessage("Customer appointment is pending. Do you approve?");
+                            builder.setIcon(android.R.drawable.ic_dialog_alert);
+                            builder.setNegativeButton("Refuse", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                    rootNode = FirebaseDatabase.getInstance();
+                                    reference = rootNode.getReference();
+                                    String full = "0";
+                                    HashMap map2 = new HashMap();
+                                    map2.put("status", full);
+                                    reference.child("Appointments").child("10").updateChildren(map2);
+                                    update("10","Refused");
+
+                                }
+                            });
+                            builder.setNeutralButton("Information", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                    information("10");
+                                }
+                            });
+                            builder.setPositiveButton("Approve", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.cancel();
+
+                                    rootNode = FirebaseDatabase.getInstance();
+                                    reference = rootNode.getReference();
+                                    String full = "2";
+                                    HashMap map2 = new HashMap();
+                                    map2.put("status", full);
+                                    reference.child("Appointments").child("10").updateChildren(map2);
+                                    update("10","Approved");
+
+
+                                }
+                            });
+                            builder.show();
+                        }
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
                     }
                 });
-                builder.show();
-            }
-        });
+            }});
         btn11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(OwnerAppointment.this);
-                builder.setTitle("Appointment");
-                builder.setMessage("Do you want to make an appointment?");
-                builder.setIcon(android.R.drawable.ic_dialog_alert);
-                builder.setNegativeButton("No", null);
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("Appointments/11/status");
+                Log.e(TAG, "ref: " + myRef);
+
+                myRef.addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String status = dataSnapshot.getValue(String.class);
 
                         rootNode = FirebaseDatabase.getInstance();
                         reference = rootNode.getReference();
-                        String full = "1";
-                        String apt = "26.01.2021 - 11:00";
-                        currentuserid = auth.getCurrentUser().getUid();
-                        HashMap map2 = new HashMap();
-                        map2.put("date", apt);
-                        reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
-                        HashMap map = new HashMap();
-                        map.put("11", full);
-                        reference.child("Appointments").updateChildren(map);
-                        String pending = "pending";
-                        HashMap map3 = new HashMap();
-                        map3.put("status", pending);
-                        reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map3);
+                        if (status.equals("2")) {
+                            information("11");
+
+                        } else if (status.equals("0")) {
+                        }
+
+                        else if (status.equals("1")) {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(OwnerAppointment.this);
+                            builder.setTitle("Appointment");
+                            builder.setMessage("Customer appointment is pending. Do you approve?");
+                            builder.setIcon(android.R.drawable.ic_dialog_alert);
+                            builder.setNegativeButton("Refuse", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                    rootNode = FirebaseDatabase.getInstance();
+                                    reference = rootNode.getReference();
+                                    String full = "0";
+                                    HashMap map2 = new HashMap();
+                                    map2.put("status", full);
+                                    reference.child("Appointments").child("11").updateChildren(map2);
+                                    update("11","Refused");
+
+                                }
+                            });
+                            builder.setNeutralButton("Information", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                    information("11");
+                                }
+                            });
+                            builder.setPositiveButton("Approve", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.cancel();
+
+                                    rootNode = FirebaseDatabase.getInstance();
+                                    reference = rootNode.getReference();
+                                    String full = "2";
+                                    HashMap map2 = new HashMap();
+                                    map2.put("status", full);
+                                    reference.child("Appointments").child("11").updateChildren(map2);
+                                    update("11","Approved");
+
+
+                                }
+                            });
+                            builder.show();
+                        }
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
                     }
                 });
-                builder.show();
-            }
-        });
+            }});
         btn12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(OwnerAppointment.this);
-                builder.setTitle("Appointment");
-                builder.setMessage("Do you want to make an appointment?");
-                builder.setIcon(android.R.drawable.ic_dialog_alert);
-                builder.setNegativeButton("No", null);
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("Appointments/12/status");
+                Log.e(TAG, "ref: " + myRef);
+
+                myRef.addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String status = dataSnapshot.getValue(String.class);
 
                         rootNode = FirebaseDatabase.getInstance();
                         reference = rootNode.getReference();
-                        String full = "1";
-                        String apt = "26.01.2021 - 12:00";
-                        currentuserid = auth.getCurrentUser().getUid();
-                        HashMap map2 = new HashMap();
-                        map2.put("date", apt);
-                        reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
-                        HashMap map = new HashMap();
-                        map.put("12", full);
-                        reference.child("Appointments").updateChildren(map);
-                        String pending = "pending";
-                        HashMap map3 = new HashMap();
-                        map3.put("status", pending);
-                        reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map3);
+                        if (status.equals("2")) {
+                            information("12");
+
+                        } else if (status.equals("0")) {
+                        }
+
+                        else if (status.equals("1")) {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(OwnerAppointment.this);
+                            builder.setTitle("Appointment");
+                            builder.setMessage("Customer appointment is pending. Do you approve?");
+                            builder.setIcon(android.R.drawable.ic_dialog_alert);
+                            builder.setNegativeButton("Refuse", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                    rootNode = FirebaseDatabase.getInstance();
+                                    reference = rootNode.getReference();
+                                    String full = "0";
+                                    HashMap map2 = new HashMap();
+                                    map2.put("status", full);
+                                    reference.child("Appointments").child("12").updateChildren(map2);
+                                    update("12","Refused");
+
+                                }
+                            });
+                            builder.setNeutralButton("Information", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                    information("12");
+                                }
+                            });
+                            builder.setPositiveButton("Approve", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.cancel();
+
+                                    rootNode = FirebaseDatabase.getInstance();
+                                    reference = rootNode.getReference();
+                                    String full = "2";
+                                    HashMap map2 = new HashMap();
+                                    map2.put("status", full);
+                                    reference.child("Appointments").child("12").updateChildren(map2);
+                                    update("12","Approved");
+
+
+                                }
+                            });
+                            builder.show();
+                        }
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
                     }
                 });
-                builder.show();
-            }
-        });
+            }});
         btn13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(OwnerAppointment.this);
-                builder.setTitle("Appointment");
-                builder.setMessage("Do you want to make an appointment?");
-                builder.setIcon(android.R.drawable.ic_dialog_alert);
-                builder.setNegativeButton("No", null);
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("Appointments/13/status");
+                Log.e(TAG, "ref: " + myRef);
+
+                myRef.addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String status = dataSnapshot.getValue(String.class);
 
                         rootNode = FirebaseDatabase.getInstance();
                         reference = rootNode.getReference();
-                        String full = "1";
-                        String apt = "26.01.2021 - 13:00";
-                        currentuserid = auth.getCurrentUser().getUid();
-                        HashMap map2 = new HashMap();
-                        map2.put("date", apt);
-                        reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
-                        HashMap map = new HashMap();
-                        map.put("13", full);
-                        reference.child("Appointments").updateChildren(map);
-                        String pending = "pending";
-                        HashMap map3 = new HashMap();
-                        map3.put("status", pending);
-                        reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map3);
+                        if (status.equals("2")) {
+                            information("13");
+
+                        } else if (status.equals("0")) {
+                        }
+
+                        else if (status.equals("1")) {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(OwnerAppointment.this);
+                            builder.setTitle("Appointment");
+                            builder.setMessage("Customer appointment is pending. Do you approve?");
+                            builder.setIcon(android.R.drawable.ic_dialog_alert);
+                            builder.setNegativeButton("Refuse", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                    rootNode = FirebaseDatabase.getInstance();
+                                    reference = rootNode.getReference();
+                                    String full = "0";
+                                    HashMap map2 = new HashMap();
+                                    map2.put("status", full);
+                                    reference.child("Appointments").child("13").updateChildren(map2);
+                                    update("13","Refused");
+
+                                }
+                            });
+                            builder.setNeutralButton("Information", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                    information("13");
+                                }
+                            });
+                            builder.setPositiveButton("Approve", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.cancel();
+
+                                    rootNode = FirebaseDatabase.getInstance();
+                                    reference = rootNode.getReference();
+                                    String full = "2";
+                                    HashMap map2 = new HashMap();
+                                    map2.put("status", full);
+                                    reference.child("Appointments").child("13").updateChildren(map2);
+                                    update("13","Approved");
+
+
+                                }
+                            });
+                            builder.show();
+                        }
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
                     }
                 });
-                builder.show();
-            }
-        });
+            }});
         btn14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(OwnerAppointment.this);
-                builder.setTitle("Appointment");
-                builder.setMessage("Do you want to make an appointment?");
-                builder.setIcon(android.R.drawable.ic_dialog_alert);
-                builder.setNegativeButton("No", null);
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("Appointments/14/status");
+                Log.e(TAG, "ref: " + myRef);
+
+                myRef.addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String status = dataSnapshot.getValue(String.class);
 
                         rootNode = FirebaseDatabase.getInstance();
                         reference = rootNode.getReference();
-                        String full = "1";
-                        String apt = "26.01.2021 - 14:00";
-                        currentuserid = auth.getCurrentUser().getUid();
-                        HashMap map2 = new HashMap();
-                        map2.put("date", apt);
-                        reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
-                        HashMap map = new HashMap();
-                        map.put("14", full);
-                        reference.child("Appointments").updateChildren(map);
-                        String pending = "pending";
-                        HashMap map3 = new HashMap();
-                        map3.put("status", pending);
-                        reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map3);
+                        if (status.equals("2")) {
+                            information("14");
+
+                        } else if (status.equals("0")) {
+                        }
+
+                        else if (status.equals("1")) {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(OwnerAppointment.this);
+                            builder.setTitle("Appointment");
+                            builder.setMessage("Customer appointment is pending. Do you approve?");
+                            builder.setIcon(android.R.drawable.ic_dialog_alert);
+                            builder.setNegativeButton("Refuse", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                    rootNode = FirebaseDatabase.getInstance();
+                                    reference = rootNode.getReference();
+                                    String full = "0";
+                                    HashMap map2 = new HashMap();
+                                    map2.put("status", full);
+                                    reference.child("Appointments").child("14").updateChildren(map2);
+                                    update("14","Refused");
+
+                                }
+                            });
+                            builder.setNeutralButton("Information", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                    information("14");
+                                }
+                            });
+                            builder.setPositiveButton("Approve", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.cancel();
+
+                                    rootNode = FirebaseDatabase.getInstance();
+                                    reference = rootNode.getReference();
+                                    String full = "2";
+                                    HashMap map2 = new HashMap();
+                                    map2.put("status", full);
+                                    reference.child("Appointments").child("14").updateChildren(map2);
+                                    update("14","Approved");
+
+
+                                }
+                            });
+                            builder.show();
+                        }
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
                     }
                 });
-                builder.show();
-            }
-        });
+            }});
         btn15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(OwnerAppointment.this);
-                builder.setTitle("Appointment");
-                builder.setMessage("Do you want to make an appointment?");
-                builder.setIcon(android.R.drawable.ic_dialog_alert);
-                builder.setNegativeButton("No", null);
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("Appointments/151515151515/status");
+                Log.e(TAG, "ref: " + myRef);
+
+                myRef.addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String status = dataSnapshot.getValue(String.class);
 
                         rootNode = FirebaseDatabase.getInstance();
                         reference = rootNode.getReference();
-                        String full = "1";
-                        String apt = "26.01.2021 - 15:00";
-                        currentuserid = auth.getCurrentUser().getUid();
-                        HashMap map2 = new HashMap();
-                        map2.put("date", apt);
-                        reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
-                        HashMap map = new HashMap();
-                        map.put("15", full);
-                        reference.child("Appointments").updateChildren(map);
-                        String pending = "pending";
-                        HashMap map3 = new HashMap();
-                        map3.put("status", pending);
-                        reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map3);
+                        if (status.equals("2")) {
+                            information("15");
+
+                        } else if (status.equals("0")) {
+                        }
+
+                        else if (status.equals("1")) {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(OwnerAppointment.this);
+                            builder.setTitle("Appointment");
+                            builder.setMessage("Customer appointment is pending. Do you approve?");
+                            builder.setIcon(android.R.drawable.ic_dialog_alert);
+                            builder.setNegativeButton("Refuse", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                    rootNode = FirebaseDatabase.getInstance();
+                                    reference = rootNode.getReference();
+                                    String full = "0";
+                                    HashMap map2 = new HashMap();
+                                    map2.put("status", full);
+                                    reference.child("Appointments").child("15").updateChildren(map2);
+                                    update("15","Refused");
+
+                                }
+                            });
+                            builder.setNeutralButton("Information", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                    information("15");
+                                }
+                            });
+                            builder.setPositiveButton("Approve", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.cancel();
+
+                                    rootNode = FirebaseDatabase.getInstance();
+                                    reference = rootNode.getReference();
+                                    String full = "2";
+                                    HashMap map2 = new HashMap();
+                                    map2.put("status", full);
+                                    reference.child("Appointments").child("15").updateChildren(map2);
+                                    update("15","Approved");
+
+
+                                }
+                            });
+                            builder.show();
+                        }
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
                     }
                 });
-                builder.show();
-            }
-        });
+            }});
         btn16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(OwnerAppointment.this);
-                builder.setTitle("Appointment");
-                builder.setMessage("Do you want to make an appointment?");
-                builder.setIcon(android.R.drawable.ic_dialog_alert);
-                builder.setNegativeButton("No", null);
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("Appointments/16/status");
+                Log.e(TAG, "ref: " + myRef);
+
+                myRef.addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String status = dataSnapshot.getValue(String.class);
 
                         rootNode = FirebaseDatabase.getInstance();
                         reference = rootNode.getReference();
-                        String full = "1";
-                        String apt = "26.01.2021 - 16:00";
-                        currentuserid = auth.getCurrentUser().getUid();
-                        HashMap map2 = new HashMap();
-                        map2.put("date", apt);
-                        reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
-                        HashMap map = new HashMap();
-                        map.put("16", full);
-                        reference.child("Appointments").updateChildren(map);
-                        String pending = "pending";
-                        HashMap map3 = new HashMap();
-                        map3.put("status", pending);
-                        reference = rootNode.getReference("users/"+currentuserid+"/Current Appointments");
-                        reference.updateChildren(map3);
+                        if (status.equals("2")) {
+                            information("16");
+
+                        } else if (status.equals("0")) {
+                        }
+
+                        else if (status.equals("1")) {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(OwnerAppointment.this);
+                            builder.setTitle("Appointment");
+                            builder.setMessage("Customer appointment is pending. Do you approve?");
+                            builder.setIcon(android.R.drawable.ic_dialog_alert);
+                            builder.setNegativeButton("Refuse", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                    rootNode = FirebaseDatabase.getInstance();
+                                    reference = rootNode.getReference();
+                                    String full = "0";
+                                    HashMap map2 = new HashMap();
+                                    map2.put("status", full);
+                                    reference.child("Appointments").child("16").updateChildren(map2);
+                                    update("16","Refused");
+
+                                }
+                            });
+                            builder.setNeutralButton("Information", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                    information("16");
+                                }
+                            });
+                            builder.setPositiveButton("Approve", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.cancel();
+
+                                    rootNode = FirebaseDatabase.getInstance();
+                                    reference = rootNode.getReference();
+                                    String full = "2";
+                                    HashMap map2 = new HashMap();
+                                    map2.put("status", full);
+                                    reference.child("Appointments").child("16").updateChildren(map2);
+                                    update("16","Approved");
+
+
+                                }
+                            });
+                            builder.show();
+                        }
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
                     }
                 });
-                builder.show();
-            }
-        });
+            }});
         btn17.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(OwnerAppointment.this);
-                builder.setTitle("Appointment");
-                builder.setMessage("Do you want to make an appointment?");
-                builder.setIcon(android.R.drawable.ic_dialog_alert);
-                builder.setNegativeButton("No", null);
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("Appointments/17/status");
+                Log.e(TAG, "ref: " + myRef);
+
+                myRef.addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String status = dataSnapshot.getValue(String.class);
 
                         rootNode = FirebaseDatabase.getInstance();
                         reference = rootNode.getReference();
-                        String full = "1";
-                        String apt = "26.01.2021 - 17:00";
-                        currentuserid = auth.getCurrentUser().getUid();
-                        HashMap map2 = new HashMap();
-                        map2.put("date", apt);
-                        reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
-                        HashMap map = new HashMap();
-                        map.put("17", full);
-                        reference.child("Appointments").updateChildren(map);
+                        if (status.equals("2")) {
+                            information("17");
 
-                        String pending = "pending";
-                        HashMap map3 = new HashMap();
-                        map3.put("status", pending);
-                        reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map3);
+                        } else if (status.equals("0")) {
+                        }
+
+                        else if (status.equals("1")) {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(OwnerAppointment.this);
+                            builder.setTitle("Appointment");
+                            builder.setMessage("Customer appointment is pending. Do you approve?");
+                            builder.setIcon(android.R.drawable.ic_dialog_alert);
+                            builder.setNegativeButton("Refuse", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                    rootNode = FirebaseDatabase.getInstance();
+                                    reference = rootNode.getReference();
+                                    String full = "0";
+                                    HashMap map2 = new HashMap();
+                                    map2.put("status", full);
+                                    reference.child("Appointments").child("17").updateChildren(map2);
+                                    update("17","Refused");
+
+                                }
+                            });
+                            builder.setNeutralButton("Information", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                    information("17");
+                                }
+                            });
+                            builder.setPositiveButton("Approve", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.cancel();
+
+                                    rootNode = FirebaseDatabase.getInstance();
+                                    reference = rootNode.getReference();
+                                    String full = "2";
+                                    HashMap map2 = new HashMap();
+                                    map2.put("status", full);
+                                    reference.child("Appointments").child("17").updateChildren(map2);
+                                    update("17","Approved");
+
+
+                                }
+                            });
+                            builder.show();
+                        }
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
                     }
                 });
-                builder.show();
-            }
-        });
+            }});
         btn18.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(OwnerAppointment.this);
-                builder.setTitle("Appointment");
-                builder.setMessage("Do you want to make an appointment?");
-                builder.setIcon(android.R.drawable.ic_dialog_alert);
-                builder.setNegativeButton("No", null);
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("Appointments/18/status");
+                Log.e(TAG, "ref: " + myRef);
+
+                myRef.addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String status = dataSnapshot.getValue(String.class);
 
                         rootNode = FirebaseDatabase.getInstance();
                         reference = rootNode.getReference();
-                        String full = "1";
-                        String apt = "26.01.2021 - 18:00";
-                        currentuserid = auth.getCurrentUser().getUid();
-                        HashMap map2 = new HashMap();
-                        map2.put("date", apt);
-                        reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
-                        HashMap map = new HashMap();
-                        map.put("18", full);
-                        reference.child("Appointments").updateChildren(map);
-                        String pending = "pending";
-                        HashMap map3 = new HashMap();
-                        map3.put("status", pending);
-                        reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map3);
+                        if (status.equals("2")) {
+                            information("18");
+
+                        } else if (status.equals("0")) {
+                        }
+
+                        else if (status.equals("1")) {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(OwnerAppointment.this);
+                            builder.setTitle("Appointment");
+                            builder.setMessage("Customer appointment is pending. Do you approve?");
+                            builder.setIcon(android.R.drawable.ic_dialog_alert);
+                            builder.setNegativeButton("Refuse", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                    rootNode = FirebaseDatabase.getInstance();
+                                    reference = rootNode.getReference();
+                                    String full = "0";
+                                    HashMap map2 = new HashMap();
+                                    map2.put("status", full);
+                                    reference.child("Appointments").child("18").updateChildren(map2);
+                                    update("18","Refused");
+
+                                }
+                            });
+                            builder.setNeutralButton("Information", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                    information("18");
+                                }
+                            });
+                            builder.setPositiveButton("Approve", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.cancel();
+
+                                    rootNode = FirebaseDatabase.getInstance();
+                                    reference = rootNode.getReference();
+                                    String full = "2";
+                                    HashMap map2 = new HashMap();
+                                    map2.put("status", full);
+                                    reference.child("Appointments").child("18").updateChildren(map2);
+                                    update("18","Approved");
+
+
+                                }
+                            });
+                            builder.show();
+                        }
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
                     }
                 });
-                builder.show();
-            }
-        });
+            }});
 
 
 

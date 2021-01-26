@@ -17,7 +17,7 @@
 
 
             <Button
-                android:id="@+id/saloon1"
+                android:id="@+id/hairsaloon1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/action_barHairdrasserDetails"
@@ -28,41 +28,6 @@
                 android:text="saloon1"
                 android:textColor="#FFFFFF" />
 
-            <Button
-                android:id="@+id/saloon2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/saloon1"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="50dp"
-                android:background="@color/pink"
-                android:text="saloon2"
-                android:textColor="#FFFFFF" />
-
-            <Button
-                android:id="@+id/saloon3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/saloon2"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="50dp"
-                android:background="@color/pink"
-                android:text="saloon3"
-                android:textColor="#FFFFFF" />
-
-            <Button
-                android:id="@+id/saloon4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/saloon3"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="50dp"
-                android:background="@color/pink"
-                android:text="saloon4"
-                android:textColor="#FFFFFF" />
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

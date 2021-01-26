@@ -71,20 +71,18 @@ public class Customer_MyAppointments extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.cancel();
-                rootNode = FirebaseDatabase.getInstance();
-                reference = rootNode.getReference();
-                String apt = "no appointment";
+                        rootNode = FirebaseDatabase.getInstance();
+                        reference = rootNode.getReference();
+                        String apt = "no appointment";
+                        String pending = "pending";
 
-                currentuserid = auth.getCurrentUser().getUid();
-                HashMap map2 = new HashMap();
-                map2.put("date", apt);
-                reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
+                        currentuserid = auth.getCurrentUser().getUid();
+                        HashMap map2 = new HashMap();
+                        map2.put("date", apt);
+                        map2.put("status", pending);
+                        reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map2);
 
-                String pending = "pending";
-                HashMap map3 = new HashMap();
-                map3.put("status", pending);
-                reference.child("users").child(currentuserid).child("Current Appointments").updateChildren(map3);
-                    }
+                            }
                 });
                 builder.show();
             }
@@ -126,12 +124,12 @@ public class Customer_MyAppointments extends AppCompatActivity {
                 if (status.equals("pending")){
                     txtmessage.setBackgroundColor(getResources().getColor(R.color.yellow));
                 }
-                else if (status.equals("approved")){
+                else if (status.equals("Approved")){
                     txtmessage.setBackgroundColor(getResources().getColor(R.color.green));
                 }
-                else
+                else if (status.equals("Refused")){
                     txtmessage.setBackgroundColor(getResources().getColor(R.color.red));
-
+                }
 
             }
             @Override
